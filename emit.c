@@ -185,7 +185,7 @@ elf_emitfin(FILE *f)
 {
 	static char *sec[3] = { ".rodata", ".rodata", ".rodata" };
 
-	emitfin(f ,sec);
+	emitfin(f, sec);
 	fprintf(f, ".section .note.GNU-stack,\"\",@progbits\n");
 }
 
@@ -194,6 +194,14 @@ elf_emitfnfin(char *fn, FILE *f)
 {
 	fprintf(f, ".type %s, @function\n", fn);
 	fprintf(f, ".size %s, .-%s\n", fn, fn);
+}
+
+void
+win_emitfin(FILE *f)
+{
+    static char *sec[3] = { ".rodata", ".rodata", ".rodata" };
+
+    emitfin(f, sec);
 }
 
 void

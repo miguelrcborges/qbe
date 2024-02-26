@@ -23,10 +23,12 @@ extern Target T_amd64_apple;
 extern Target T_arm64;
 extern Target T_arm64_apple;
 extern Target T_rv64;
+extern Target T_amd64_win;
 
 static Target *tlist[] = {
 	&T_amd64_sysv,
 	&T_amd64_apple,
+	&T_amd64_win,
 	&T_arm64,
 	&T_arm64_apple,
 	&T_rv64,
